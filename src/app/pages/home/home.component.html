@@ -1,0 +1,19 @@
+<main class="home">
+  <section
+    class="home__content"
+    *ngFor="let item of dataCircle"
+    [@animate]="{ value: '*', params: { y: '-100%', delay: '.4s' } }"
+  >
+    <h2>{{ item.name }}</h2>
+    <div [class]="item.color" class="divider"></div>
+    <div class="home__content__circle" (click)="redirectTo(item.route)">
+      <div class="home__content__circle__img-wrap" [class]="item.color">
+        <img
+          [src]="item.imgUrl"
+          alt=""
+          [ngClass]="{ 'padding-img': item.name === 'Youtube' }"
+        />
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,19 @@
+<figure class="card">
+  <a
+    href="https://editor.trakto.io/presentation/p/{{products?.id}} "
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <div class="card__img-wrap">
+      <img
+        [src]="products?.thumbs?.low"
+        [alt]="products.title"
+        class="card__img-wrap__img"
+      />
+    </div>
+
+    <figcaption class="card__caption">
+      {{ products.title }}
+    </figcaption>
+  </a>
+</figure>

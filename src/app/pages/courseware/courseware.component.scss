@@ -1,0 +1,240 @@
+@import "../../core/scss/variables/var";
+
+.container-course {
+  @media (min-width: 900px) {
+    padding: 20px 30px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 32px 64px;
+  }
+}
+
+.banner {
+  background: url("../../../assets/images/banner.png") no-repeat;
+  background-size: cover;
+
+  height: 245px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    background: url("../../../assets/images/banner-icons.png");
+
+    height: 245px;
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    z-index: -1;
+
+    @media (min-width: 900px) {
+      height: 584px;
+    }
+    @media (min-width: 1200px) {
+      height: 584px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    height: 584px;
+  }
+
+  @media (min-width: 1200px) {
+    height: 584px;
+  }
+
+  &__text {
+    color: $neutral_white;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (min-width: 900px) {
+      margin-left: 50px;
+      max-width: 420px;
+    }
+
+    @media (min-width: 1200px) {
+      margin-left: 80px;
+      max-width: 500px;
+
+    }
+    @media (min-width: 1350px) {
+      max-width: 674px;
+
+    }
+
+    @media (min-width: 1500px) {
+      margin-left: 152px;
+      max-width: 774px;
+    }
+
+    &__title {
+      font-size: 30px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      line-height: 130%;
+
+      @media (min-width: 900px) {
+        font-size: 45px;
+      }
+
+      @media (min-width: 1350px) {
+        font-size: 60px;
+      }
+
+      @media (min-width: 1650px) {
+        font-size: 72px;
+      }
+    }
+
+    &__subtitle {
+      font-size: 16px;
+      line-height: 130%;
+
+      @media (min-width: 900px) {
+        font-size: 23px;
+      }
+      @media (min-width: 1350px) {
+        font-size: 28px;
+      }
+      @media (min-width: 1650px) {
+        font-size: 32px;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+    position: relative;
+
+    img {
+      position: relative;
+      bottom: 0;
+    }
+
+    @media (min-width: 900px) {
+      margin-right: 50px;
+      display: block;
+    }
+
+    @media (min-width: 1200px) {
+      margin-right: 80px;
+      max-width: 774px;
+    }
+    @media (min-width: 1500px) {
+      margin-right: 152px;
+    }
+
+    &::before {
+      content: "";
+      background: url("../../../assets/images/nome-prof.svg") no-repeat;
+      background-size: 288px;
+
+      height: 180px;
+      width: 100%;
+
+      position: absolute;
+      top: 364px;
+      right: 245px;
+
+      @media (min-width: 1800px) {
+        background-size: contain;
+        right: 304px;
+      }
+    }
+  }
+}
+
+.couserware {
+  background: $neutral_white;
+  border-radius: 8px;
+
+  padding: 20px 25px;
+  margin-top: 16px;
+
+  width: 100%;
+
+  @media (min-width: 900px) {
+    padding: 56px 72px;
+    margin-top: 56px;
+    max-height: 512px;
+  }
+
+  &__details {
+    margin-bottom: 16px;
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+
+    &__date {
+      background: $neutral_light;
+      border-radius: 500px;
+      color: $neutral_cloudy;
+
+      padding: 4px 8px;
+      @media (min-width: 900px) {
+        font-size: 16px;
+      }
+    }
+
+    &__btn {
+      background: none;
+      border: 1px solid $brand_trakto_app;
+      border-radius: 8px;
+      color: $brand_trakto_app;
+
+      padding: 12px 16px;
+
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.04);
+      }
+
+      @media (min-width: 900px) {
+        font-size: 16px;
+        padding: 16px 24px;
+      }
+    }
+  }
+
+  &__text {
+    &__title {
+      color: $neutral_dark;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      @media (min-width: 900px) {
+        font-size: 24px;
+      }
+    }
+
+    &__subtitle {
+      color: $neutral_cloudy;
+      font-size: 14px;
+      margin: 0;
+      @media (min-width: 900px) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__card-wrap {
+    margin-top: 32px;
+  }
+}

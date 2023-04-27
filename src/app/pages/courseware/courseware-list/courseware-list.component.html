@@ -1,0 +1,21 @@
+<div class="container-list">
+  <main class="couserware">
+    <article
+      class="couserware__text"
+      [@animate]="{ value: '*', params: { x: '-50px', delay: '.8s' } }"
+    >
+      <h2 class="couserware__text__title">Material Didático</h2>
+      <p class="couserware__text__subtitle">
+        Acesse suas últimas apresentações de aula.
+      </p>
+    </article>
+
+    <section class="couserware__card-wrap">
+      <card
+        [@animate]="{ value: '*', params: { y: '100%', delay: '.8s' } }"
+        *ngFor="let course of products$ | async"
+        [products]="course"
+      ></card>
+    </section>
+  </main>
+</div>

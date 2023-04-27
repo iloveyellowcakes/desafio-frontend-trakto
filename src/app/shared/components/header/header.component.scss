@@ -1,0 +1,128 @@
+@import "../../../core/scss/variables/var";
+
+.header {
+  background: $neutral_white;
+
+  height: 76px;
+  width: 100%;
+
+  .nav {
+    padding: 13px 65px;
+
+    display: flex;
+    justify-content: space-between;
+
+    &__wrap {
+      display: flex;
+      align-items: center;
+      column-gap: 42px;
+    }
+
+    &__items {
+      display: none;
+
+      @media (min-width: 850px) {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        column-gap: 32px;
+      }
+
+      &__date {
+        display: flex;
+        align-items: center;
+        column-gap: 11px;
+
+        &__icon {
+          height: 32px;
+        }
+        &__text {
+          color: $neutral_cloudy;
+          font-size: 18px;
+          margin: 0;
+        }
+      }
+
+      &__account {
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+
+
+        &__img {
+          background: $neutral_cloudy;
+          border-radius: 50%;
+          position: relative;
+
+          height: 40px;
+          width: 40px;
+
+          img {
+            border-radius: 50%;
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .logout-btn {
+    background: none;
+    border: 1px solid $neutral_cloudy;
+    border-radius: 8px;
+    color: $neutral_cloudy;
+
+    padding: 12px 16px;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    img {
+      height: 19px;
+    }
+
+    &:hover {
+      transform: scale(1.04);
+    }
+
+    @media (min-width: 900px) {
+      font-size: 16px;
+      padding: 16px 24px;
+    }
+  }
+
+  .divider {
+    background: $neutral_light;
+
+    height: 24px;
+    width: 1px;
+
+    opacity: 32%;
+  }
+
+  .red {
+    background: red !important;
+  }
+}
+
+.icon-cloudy {
+  filter: invert(44%) sepia(9%) saturate(1190%) hue-rotate(154deg)
+    brightness(95%) contrast(90%);
+}
+
+.background {
+  background: $background_dark;
+}
+
+.divider-home {
+  background: $neutral_cloudy !important;
+}
+
+.color-home {
+  color: $neutral_white !important;
+}

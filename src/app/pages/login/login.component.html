@@ -1,0 +1,53 @@
+<main class="container">
+  <div class="login">
+    <article class="login__header">
+      <img
+        src="../../../assets/images/trakto-logo-initial.svg"
+        alt="Trakto logo"
+        class="login__header__title"
+      />
+      <h2 class="login__header__subtitle">Olá, faça login em sua conta.</h2>
+    </article>
+
+    <section class="erro-msg" *ngIf="error">
+      <p>E-mail ou Senha inválidos!</p>
+    </section>
+
+    <form class="login__form" [formGroup]="loginForm">
+      <section class="login__form__group">
+        <label for="email" class="login__form__group__label">Email</label>
+        <input
+          formControlName="email"
+          type="email"
+          name="email"
+          id="email"
+          class="login__form__group__input"
+          required
+        />
+      </section>
+
+      <section class="login__form__group">
+        <label for="password" class="login__form__group__label">Senha</label>
+        <input
+          formControlName="password"
+          type="password"
+          name="password"
+          id="password"
+          class="login__form__group__input"
+          required
+        />
+      </section>
+
+      <button
+        class="login__form__button"
+        type="submit"
+        (click)="login()"
+        [ngClass]="{ 'disable' : loginForm.invalid || isLoading}"
+        [disabled]="loginForm.invalid"
+      >
+        <span *ngIf="!isLoading">Entrar</span>
+        <span *ngIf="isLoading">Entrando...</span>
+      </button>
+    </form>
+  </div>
+</main>

@@ -1,0 +1,36 @@
+<main class="container-course">
+  <section class="banner">
+    <article class="banner__text" [@animate]="{ value: '*', params: { x: '-50px', delay: '.2s' } }">
+      <h1 class="banner__text__title">Conheça a jornada do Trakto Edu</h1>
+      <p class="banner__text__subtitle">O design como ferramenta educadora.</p>
+    </article>
+    <div class="banner__img">
+      <img src="../../../assets/images/Group 2193.png" alt="" />
+    </div>
+  </section>
+
+  <section class="couserware">
+    <div class="couserware__details">
+      <span class="couserware__details__date"> Semana 06/02 até 28/02 </span>
+      <button class="couserware__details__btn" (click)="redirectTo()">
+        Ver todo conteúdo
+      </button>
+    </div>
+    <article class="couserware__text">
+      <h2 class="couserware__text__title">Material Didático</h2>
+      <p class="couserware__text__subtitle">
+        Acesse suas últimas apresentações de aula.
+      </p>
+    </article>
+
+    <div class="couserware__card-wrap">
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let course of products$ | async">
+          <ng-template carouselSlide class="container-card" [id]="course?.id">
+            <card [products]="course"></card>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,132 @@
+@import "../../core/scss/variables/var";
+
+.home {
+  background-color: $background-darker;
+
+  padding: 32px 0;
+  position: relative;
+  z-index: 2;
+
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+
+  &::after {
+    content: "";
+    background: url("../../../assets/images/banner-icons.png");
+
+    position: absolute;
+    filter: invert(83%) sepia(69%) saturate(0%) hue-rotate(104deg)
+      brightness(117%) contrast(101%);
+    z-index: -1;
+
+    height: 100%;
+    width: 100%;
+    opacity: 20%;
+  }
+
+  @media (min-width: 700px) {
+    row-gap: 99px;
+  }
+  @media (min-width: 1460px) {
+    column-gap: 99px;
+  }
+
+  &__content {
+    h2 {
+      color: $neutral_white;
+      font-size: 34px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      text-align: center;
+      @media (min-width: 1790px) {
+        font-size: 49px;
+      }
+    }
+
+    &__circle {
+      background: $circle_dark;
+      border-radius: 50%;
+
+      margin: 32px 0;
+
+      height: 273px;
+      width: 273px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.04);
+      }
+
+      @media (min-width: 700px) {
+        margin: 0;
+      }
+      @media (min-width: 1790px) {
+        height: 373px;
+        width: 373px;
+      }
+
+      &__img-wrap {
+        background: $circle_blue;
+        border-radius: 50%;
+
+        height: 211px;
+        width: 211px;
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: 1790px) {
+          height: 311px;
+          width: 311px;
+        }
+
+        img {
+          position: absolute;
+          width: 195px;
+
+          @media (min-width: 1790px) {
+            width: 268px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.divider {
+  margin: 0 auto 36px auto;
+
+  height: 4px;
+  width: 28px;
+}
+
+.circle_blue {
+  background: $circle_blue;
+}
+.circle_green {
+  background: $circle_green;
+}
+.circle_purple {
+  background: $circle_purple;
+}
+.circle_red {
+  background: $circle_red;
+}
+
+.padding-img {
+  padding: 30px;
+}

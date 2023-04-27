@@ -1,0 +1,43 @@
+@import "../../../core/scss/variables/var";
+
+
+.modal {
+  background: rgb(162 162 162 / 46%);
+
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  z-index: 4;
+  &__menu {
+    background: $neutral_white;
+    border-radius: 7px;
+
+    padding: 12px 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 8;
+
+    min-width: 180px;
+
+    &__item {
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      column-gap: 6px;
+
+      img {
+        height: 20px;
+      }
+      p{
+        color: $neutral_cloudy;
+        margin: 0;
+      }
+    }
+  }
+}

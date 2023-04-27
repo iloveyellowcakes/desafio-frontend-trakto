@@ -1,0 +1,59 @@
+<header class="header" [ngClass]="{ background: isHome }">
+  <nav class="nav">
+    <section class="nav__wrap">
+      <img [src]="getUrlImg()" alt="logo Trakto Edu" />
+
+      <button
+        class="logout-btn"
+        (click)="redirectTo()"
+        *ngIf="isHome === false"
+      >
+        <span>
+          <img
+            class="icon-color"
+            src="../../../../assets/icons/logout.svg"
+            alt="Logout"
+          />
+        </span>
+        Trocar de ambiente
+      </button>
+    </section>
+
+    <ul class="nav__items">
+      <li class="nav__items__date">
+        <img
+          class="nav__items__date__icon"
+          [ngClass]="{ 'icon-cloudy': !isHome }"
+          src="../../../../assets/icons/calendar.svg"
+          alt="Calendário"
+        />
+        <p class="nav__items__date__text" [ngClass]="{ 'color-home': isHome }">
+          {{ today }}
+        </p>
+      </li>
+      <li class="divider" [ngClass]="{ 'divider-home': !isHome }"></li>
+      <li>
+        <img
+          class="nav__items__date__icon"
+          [ngClass]="{ 'icon-cloudy': !isHome }"
+          src="../../../../assets/icons/notification.svg"
+          alt="Notificação Sino"
+        />
+      </li>
+      <li class="divider" [ngClass]="{ 'divider-home': !isHome }"></li>
+      <li class="nav__items__account" (click)="toggle()">
+        <figure class="nav__items__account__img">
+          <img [src]="imgUrl" alt="Avatar" />
+        </figure>
+        <img
+          src="../../../../assets/icons/arrow.svg"
+          alt=""
+          [@rotate]="{ value: state }"
+          [ngClass]="{ 'icon-cloudy': !isHome }"
+        />
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<app-modal-menu *ngIf="toggleModal"></app-modal-menu>

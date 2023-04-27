@@ -1,0 +1,101 @@
+@import "../../core/scss/variables/var";
+
+.container {
+  height: 100%;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  padding: 10px;
+
+  max-height: 345px;
+  max-width: 300px;
+
+  display: grid;
+
+  @media (min-width: 900px) {
+    padding: 0;
+    height: 345px;
+    width: 300px;
+
+    row-gap: 24px;
+  }
+
+  &__header {
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__subtitle {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  &__form {
+    display: grid;
+    row-gap: 24px;
+
+    &__group {
+      display: inherit;
+      row-gap: 4px;
+
+      &__label {
+        font-size: 12px;
+        font-weight: 400;
+
+        &:focus {
+          color: $brand-trakto;
+        }
+      }
+
+      &__input {
+        border: solid 1px $neutral_light;
+        border-radius: 4px;
+        padding: 16px;
+
+        &:focus {
+          outline: none !important;
+          border: 1px solid $brand-trakto;
+          transition: all 0.2s;
+        }
+      }
+
+      &:focus-within {
+        color: $brand-trakto;
+        transition: all 0.2s;
+      }
+    }
+
+    &__button {
+      background: $brand_green;
+
+      border: none;
+      border-radius: 4px;
+
+      color: $neutral_white;
+      cursor: pointer;
+      padding: 16px;
+    }
+  }
+}
+
+.disable {
+  background: #72ffac !important;
+  cursor: default;
+}
+
+.erro-msg {
+  background: #ff6565;
+  border-radius: 8px;
+  padding: 4px 23px;
+
+  p {
+    color: $neutral_white;
+    font-weight: 700;
+    margin: 0;
+  }
+}
